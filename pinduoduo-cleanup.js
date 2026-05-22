@@ -72,6 +72,15 @@
     return JSON.stringify(cleanPinduoduoHomeHub(JSON.parse(body)));
   }
 
+  if (typeof $done === "function") {
+    try {
+      $done({ body: rewriteBody($response.body || "{}") });
+    } catch (_) {
+      $done({});
+    }
+    return;
+  }
+
   if (typeof module !== "undefined" && module.exports) {
     module.exports = {
       cleanPinduoduoHomeHub: cleanPinduoduoHomeHub,
@@ -79,11 +88,5 @@
       isDuoduoVideoTab: isDuoduoVideoTab,
     };
     return;
-  }
-
-  try {
-    $done({ body: rewriteBody($response.body || "{}") });
-  } catch (_) {
-    $done({});
   }
 })();
