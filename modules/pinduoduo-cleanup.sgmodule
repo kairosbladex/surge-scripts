@@ -2,7 +2,7 @@
 #!desc=清理拼多多首页底部多多视频入口，适合与其他 Surge 去广告模块一起启用。
 
 [Script]
-PinduoduoHomeCleanup = type=http-response,pattern=^https?:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub(?:\?|$),requires-body=true,max-size=0,script-path=https://cdn.jsdelivr.net/gh/kairosbladex/surge-scripts@main/pinduoduo-cleanup.js,script-update-interval=86400
+PinduoduoHomeCleanup = type=http-response,pattern=^https?:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub(?:\?|$),requires-body=true,max-size=0,script-path=https://cdn.jsdelivr.net/gh/kairosbladex/surge-scripts@a67a5b4b8886c43789880feb5a3d0fcf14eb8609/pinduoduo-cleanup.js,script-update-interval=86400
 
 [MITM]
 hostname = %APPEND% api.pinduoduo.com
